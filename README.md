@@ -22,7 +22,7 @@ Private source-of-truth repository for the Black Label software portfolio, clien
 
 ## Current truth
 
-- GitHub account inventory: 26 existing repositories; 25 private and one public profile repository.
+- GitHub account inventory: 27 repositories; 26 private and one public profile repository.
 - Public company surface: Black Label Bots remains the current verified storefront.
 - Company/archive site: specification stage; the working preview must remain private and `noindex` until the name decision and visual approval.
 - Public snippets: not approved yet. Candidates must pass [the public-extract policy](docs/PUBLIC-EXTRACTS-POLICY.md).
