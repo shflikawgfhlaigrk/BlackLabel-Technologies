@@ -1,4 +1,5 @@
 import json
+import os
 import shutil
 import subprocess
 import tempfile
@@ -23,36 +24,50 @@ class PublicBoundaryTests(unittest.TestCase):
             copied_scanner.parent.mkdir(parents=True)
             shutil.copy2(SCANNER, copied_scanner)
 
+            tool_bin = scan_root / "bin"
+            tool_bin.mkdir()
+            for tool in ("dirname", "find", "grep"):
+                tool_path = shutil.which(tool)
+                self.assertIsNotNone(tool_path, f"required test tool missing: {tool}")
+                (tool_bin / tool).symlink_to(tool_path)
+
             leak_path = scan_root / relative_path
             leak_path.parent.mkdir(parents=True, exist_ok=True)
             leak_path.write_text(content, encoding="utf-8")
 
+            environment = os.environ.copy()
+            environment["PATH"] = str(tool_bin)
             result = subprocess.run(
-                ["bash", str(copied_scanner)],
+                ["/bin/bash", str(copied_scanner)],
                 check=False,
                 capture_output=True,
+                env=environment,
                 text=True,
             )
 
         return result, content.strip()
 
-    def _assert_rejected_without_echoing(self, fixture_name: str) -> None:
+    def _assert_rejected_without_echoing(self, fixture_name: str, expected_message: str) -> None:
         result, sensitive_content = self._run_fixture(fixture_name)
         output = result.stdout + result.stderr
         self.assertNotEqual(result.returncode, 0, output)
+        self.assertIn(expected_message, output)
         self.assertNotIn(sensitive_content, output)
 
     def test_rejects_ghp_token_without_echoing_it(self):
-        self._assert_rejected_without_echoing("ghp-token.json")
+        self._assert_rejected_without_echoing("ghp-token.json", "Potential credential detected.")
 
     def test_rejects_xoxb_token_without_echoing_it(self):
-        self._assert_rejected_without_echoing("xoxb-token.json")
+        self._assert_rejected_without_echoing("xoxb-token.json", "Potential credential detected.")
 
     def test_rejects_env_production_file(self):
-        self._assert_rejected_without_echoing("env-production.json")
+        self._assert_rejected_without_echoing(
+            "env-production.json",
+            "Blocked private or signing artifact detected.",
+        )
 
     def test_existing_credential_detection_does_not_echo_secret(self):
-        self._assert_rejected_without_echoing("gho-token.json")
+        self._assert_rejected_without_echoing("gho-token.json", "Potential credential detected.")
 
 
 if __name__ == "__main__":
