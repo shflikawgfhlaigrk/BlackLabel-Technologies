@@ -1,0 +1,17 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.wrangler/
+*.zip
+*.dmg
+*.pkg
+*.p12
+*.mobileprovision
+*.provisionprofile
+*.key
+*.pem
+*.sqlite*
+*.db

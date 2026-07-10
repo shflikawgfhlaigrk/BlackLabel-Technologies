@@ -1,0 +1,42 @@
+{
+  "captured_at": "2026-07-10",
+  "owner": "mthburnsbarber-web",
+  "existing_repository_count": 26,
+  "repositories": [
+    {"name":"AceOS","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"Agent0","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabel-Investor","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabel-Team","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelAcademy","visibility":"PRIVATE","default_branch":"ios/academy"},
+    {"name":"BlackLabelCircuit","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelHome","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelLeads","visibility":"PRIVATE","default_branch":"fix/buttons-backnav-20260618"},
+    {"name":"BlackLabelLeadsAPI","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelLiveWallpaper","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelMarketing","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelPropertyHarvest","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelRealEstate","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelRealEstate-bulkimport-fork","visibility":"PRIVATE","default_branch":"fix/buttons-backnav-20260618"},
+    {"name":"BlackLabelRealEstateAPI","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelShip","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelSovereign","visibility":"PRIVATE","default_branch":"fix/buttons-backnav-20260618"},
+    {"name":"BlackLabelSunset","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"BlackLabelTrading","visibility":"PRIVATE","default_branch":"mobile"},
+    {"name":"HomefrontGuardian","visibility":"PRIVATE","default_branch":"ci/ios-appstore-lane"},
+    {"name":"ProjectUtah","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"blacklabel-vps-agent","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"blacklabelbots-site","visibility":"PRIVATE","default_branch":"mobile"},
+    {"name":"capstone-mcp","visibility":"PRIVATE","default_branch":"main"},
+    {"name":"mthburnsbarber-web","visibility":"PUBLIC","default_branch":"main"},
+    {"name":"sovereign-live","visibility":"PRIVATE","default_branch":"main"}
+  ],
+  "review_required": [
+    "BlackLabelAcademy",
+    "BlackLabelLeads",
+    "BlackLabelRealEstate-bulkimport-fork",
+    "BlackLabelSovereign",
+    "BlackLabelTrading",
+    "HomefrontGuardian",
+    "blacklabelbots-site"
+  ]
+}

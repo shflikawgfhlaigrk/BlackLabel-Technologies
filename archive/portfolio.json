@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-07-10",
+  "status_definitions": {
+    "verified": "The current live or installed surface was directly proved.",
+    "partial": "A real component exists, but delivery, trust, portability, or claim proof is incomplete.",
+    "building": "A staging or source surface exists but is not a public launch.",
+    "unverified": "The claimed Black Label implementation could not be tied to source and deployment evidence."
+  },
+  "systems": [
+    {"name": "Black Label Bots", "kind": "storefront", "status": "verified"},
+    {"name": "Sovereign", "kind": "product", "status": "partial"},
+    {"name": "Vigil", "kind": "product", "status": "partial"},
+    {"name": "Sunset", "kind": "product", "status": "partial"},
+    {"name": "Real Estate / Bestate", "kind": "product", "status": "partial"},
+    {"name": "Trading", "kind": "product", "status": "partial"},
+    {"name": "Circuit", "kind": "product", "status": "partial"},
+    {"name": "Academy", "kind": "product", "status": "partial"},
+    {"name": "Marketing", "kind": "internal_system", "status": "partial"},
+    {"name": "HQ", "kind": "internal_system", "status": "partial"},
+    {"name": "AS Golf Clothing", "kind": "client_system", "status": "partial"},
+    {"name": "Blackwater", "kind": "client_system", "status": "building"},
+    {"name": "Gulf Coast Wellness", "kind": "client_presence", "status": "unverified"}
+  ]
+}
