@@ -8,8 +8,8 @@ Status: **private candidate; not approved for public release**
 | Synthetic fixtures only | Pass |
 | Third-party runtime dependencies | None |
 | Production/client identifiers | None |
-| Secret boundary scan | Pending final repository scan |
-| Clean-clone test | Pending |
+| Secret boundary scan | Pass — repository boundary scan returned zero findings |
+| Clean-clone test | Pass — six tests passed from a fresh remote clone |
 | Ownership review | Pending human approval |
 | License | Blocked — not selected |
 | Public visibility approval | Blocked — not granted |
