@@ -43,11 +43,21 @@ def validate_release(manifest: Dict[str, Any], artifact: Dict[str, Any]) -> List
 
     manifest_architectures = manifest.get("architectures")
     artifact_architectures = artifact.get("architectures")
+    manifest_architectures_valid = False
+    artifact_architectures_valid = False
     if not isinstance(manifest_architectures, list) or not manifest_architectures:
         issues.append("manifest architectures must be a non-empty list")
+    elif not all(isinstance(architecture, str) for architecture in manifest_architectures):
+        issues.append("manifest architectures must contain only strings")
+    else:
+        manifest_architectures_valid = True
     if not isinstance(artifact_architectures, list) or not artifact_architectures:
         issues.append("artifact architectures must be a non-empty list")
-    if isinstance(manifest_architectures, list) and isinstance(artifact_architectures, list):
+    elif not all(isinstance(architecture, str) for architecture in artifact_architectures):
+        issues.append("artifact architectures must contain only strings")
+    else:
+        artifact_architectures_valid = True
+    if manifest_architectures_valid and artifact_architectures_valid:
         if set(manifest_architectures) != set(artifact_architectures):
             issues.append(
                 "architecture mismatch: "

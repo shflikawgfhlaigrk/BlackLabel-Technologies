@@ -71,6 +71,22 @@ class ReleaseTruthCheckTests(unittest.TestCase):
             validate_release(MANIFEST, artifact),
         )
 
+    def test_rejects_mixed_architecture_types_without_type_error(self):
+        manifest = copy.deepcopy(MANIFEST)
+        manifest["architectures"] = ["arm64", 64]
+        self.assertIn(
+            "manifest architectures must contain only strings",
+            validate_release(manifest, ARTIFACT),
+        )
+
+    def test_rejects_unhashable_non_string_architecture_without_type_error(self):
+        artifact = copy.deepcopy(ARTIFACT)
+        artifact["architectures"] = ["arm64", {"name": "x86_64"}]
+        self.assertIn(
+            "artifact architectures must contain only strings",
+            validate_release(MANIFEST, artifact),
+        )
+
     def test_cli_returns_zero_for_good_synthetic_fixture(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)

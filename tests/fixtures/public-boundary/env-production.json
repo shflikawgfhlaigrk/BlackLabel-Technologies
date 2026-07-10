@@ -1,0 +1,4 @@
+{
+  "path_parts": [".env", ".production"],
+  "content_parts": ["SYNTHETIC_PASSWORD=not-a-secret", "\n"]
+}

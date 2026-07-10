@@ -22,5 +22,7 @@ jobs:
           python -m json.tool archive/github-repositories.json >/dev/null
       - name: Reject common private artifacts
         run: bash scripts/check-public-boundary.sh
+      - name: Test public-boundary scanner
+        run: python -m unittest discover -s tests -p 'test_public_boundary.py' -v
       - name: Test private public-extract candidates
         run: python -m unittest discover -s public-extracts/release-truth-check/tests -v

@@ -1,0 +1,10 @@
+{
+  "path_parts": ["leak", ".txt"],
+  "content_parts": [
+    "slack_token=",
+    "xo",
+    "xb-",
+    "1234567890-1234567890-ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "\n"
+  ]
+}

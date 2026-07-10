@@ -1,0 +1,10 @@
+{
+  "path_parts": ["leak", ".txt"],
+  "content_parts": [
+    "github_token=",
+    "gh",
+    "p_",
+    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "\n"
+  ]
+}
