@@ -1,0 +1,9 @@
+{
+  "product": "Example App",
+  "version": "1.2.3",
+  "build": 42,
+  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "download_url": "https://downloads.example.invalid/example-app-42.zip",
+  "team_id": "TEAM123456",
+  "architectures": ["arm64", "x86_64"]
+}

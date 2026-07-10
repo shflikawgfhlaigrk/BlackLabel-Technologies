@@ -5,6 +5,8 @@
 node_modules/
 dist/
 .wrangler/
+__pycache__/
+*.py[cod]
 *.zip
 *.dmg
 *.pkg
