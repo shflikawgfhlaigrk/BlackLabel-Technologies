@@ -11,10 +11,10 @@ const distPath = path.join(ROOT, "dist", "index.html");
 const failures = [];
 const ok = (cond, msg) => { if (!cond) failures.push(msg); };
 
-// 1. Status vocabulary is limited to Verified / Partial / Building.
+// 1. Every published item carries an explicit status from the approved vocabulary.
 const ALLOWED = new Set(["Verified", "Partial", "Building"]);
-for (const item of [...data.work, ...data.products]) {
-  if (item.status) ok(ALLOWED.has(item.status), `status "${item.status}" on "${item.name}" not in {Verified, Partial, Building}`);
+for (const item of [...data.work, ...data.products, ...data.systems]) {
+  ok(ALLOWED.has(item.status), `status "${item.status}" on "${item.name}" not in {Verified, Partial, Building}`);
 }
 
 // 2. No fabrication vocabulary anywhere in content or output.

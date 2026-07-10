@@ -2,7 +2,7 @@
 
 Private source-of-truth repository for the Black Label software portfolio, client-system archive, public-extract policy, and future company site.
 
-`BlackLabel-Technologies` is a working repository name, not a cleared public brand. As of 2026-07-10, the exact Black Label Technologies name and dot-com are already used by an unrelated technology business. Do not publish or attach a custom domain until the name is cleared or replaced.
+`BlackLabel-Technologies` is a working repository name, not a cleared public brand. As of 2026-07-10, the exact Black Label Technologies name and dot-com are already used by an unrelated technology business. A `noindex` working preview exists at `www.blacklabeltec.com`; do not index, market, or represent that working name as cleared until the name is approved or replaced.
 
 ## What belongs here
 
@@ -24,7 +24,7 @@ Private source-of-truth repository for the Black Label software portfolio, clien
 
 - GitHub account inventory: 27 repositories; 26 private and one public profile repository.
 - Public company surface: Black Label Bots remains the current verified storefront.
-- Company/archive site: specification stage; the working preview must remain private and `noindex` until the name decision and visual approval.
+- Company/archive site: `noindex` working preview; factual release labels and visual approval remain gates before indexing or promotion.
 - Public snippets: not approved yet. Candidates must pass [the public-extract policy](docs/PUBLIC-EXTRACTS-POLICY.md).
 
 Start with [the portfolio archive](docs/PORTFOLIO-ARCHIVE.md) and [the first 48-hour plan](docs/NEXT-48-HOURS.md).

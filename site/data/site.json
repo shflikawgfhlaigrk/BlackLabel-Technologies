@@ -14,8 +14,8 @@
   "work": [
     {
       "name": "Addison Simmons Golf Apparel",
-      "status": "Verified",
-      "summary": "Full e-commerce catalog site for a golf apparel brand — designed, built, and operated by Black Label.",
+      "status": "Partial",
+      "summary": "Owned public concept lookbook for fifteen designs. Ordering and contact remain unavailable until the new site has a verified backend.",
       "link": "https://asgolfclothing.com"
     },
     {
@@ -32,44 +32,44 @@
   "products": [
     {
       "name": "Sunset",
-      "status": "Verified",
-      "summary": "Audio mastering for macOS. Broadcast-grade loudness engineering, processed entirely on your machine.",
+      "status": "Partial",
+      "summary": "Local audio mastering for macOS. The custom-domain download bypass is contained; automatic checkout entitlement and historical URL retirement remain open.",
       "link": "https://sunsetmixing.com"
     },
     {
       "name": "Sovereign",
-      "status": "Verified",
-      "summary": "A local-first AI assistant that runs on your own accounts and hardware. Ships empty; your data stays yours.",
+      "status": "Partial",
+      "summary": "A local-first AI assistant designed for owner-controlled accounts and hardware. Its release, installed build, and runtime source are not yet reconciled.",
       "link": "https://blacklabelbots.com/sovereign"
     },
     {
       "name": "Real Estate",
-      "status": "Verified",
-      "summary": "Property intelligence for investors — search, parcels, mapping, and deal analysis over a national property index.",
+      "status": "Partial",
+      "summary": "Property search, parcels, mapping, and deal analysis over a national index. The live API works; updater and installed-release parity remain incomplete.",
       "link": "https://blbestate.com"
     },
     {
       "name": "Trading",
-      "status": "Verified",
-      "summary": "Signals-only market analysis. No auto-trading. Published results carry their statistics, or they are not published.",
+      "status": "Partial",
+      "summary": "Signals-only market analysis with no auto-trading claim. The product surface exists; helper runtime and updater contracts are not release-clean.",
       "link": "https://blacklabelbots.com"
     },
     {
       "name": "Marketing",
-      "status": "Verified",
-      "summary": "Promo video, content, and site generation that runs on the buyer's own assets and accounts.",
+      "status": "Partial",
+      "summary": "Promo video, content, and site generation using buyer-owned assets and accounts. The installed build is ahead of the current production release.",
       "link": "https://blacklabelbots.com"
     },
     {
       "name": "Academy",
-      "status": "Verified",
-      "summary": "Self-paced software and product-engineering lessons in a native macOS app.",
+      "status": "Partial",
+      "summary": "Self-paced software and product-engineering lessons in a native macOS app. The latest staged build is not yet the production build.",
       "link": "https://blacklabelbots.com"
     },
     {
       "name": "Circuit",
       "status": "Partial",
-      "summary": "3D code-health visualization and grading for software repositories."
+      "summary": "3D code-health visualization and grading. A signed macOS build is installed; buyer clean-install proof and Windows signing remain open."
     },
     {
       "name": "Vigil",
@@ -86,19 +86,23 @@
   "systems": [
     {
       "name": "Local-first architecture",
-      "summary": "Applications run on the owner's machine and accounts. They ship empty — no bundled data, no hidden services, no dependence on our infrastructure to function."
+      "status": "Partial",
+      "summary": "The portfolio direction is owner-controlled data and execution. Current products still vary in sidecars, account delivery, and clean-install independence."
     },
     {
       "name": "Release engineering",
-      "summary": "A notarized macOS release pipeline that re-downloads the shipped artifact, hashes it, and re-verifies it the way a customer's machine will."
+      "status": "Partial",
+      "summary": "Several notarized macOS artifacts pass signing and Gatekeeper checks, but fleet-wide source, install, updater, and buyer-download parity is not complete."
     },
     {
       "name": "Deliverability-gated outreach",
-      "summary": "Fail-closed sending infrastructure with compliance constraints enforced in the database schema, not just application code."
+      "status": "Partial",
+      "summary": "Fail-closed sending and database-level compliance controls exist; current sender readiness and production throughput still require live proof."
     },
     {
       "name": "Agent operations",
-      "summary": "An internal operating loop of AI worker seats reporting computed, evidence-backed progress — percentages are calculated from verification commands, never asserted."
+      "status": "Building",
+      "summary": "A reference operating model for evidence-backed AI worker seats. No active Ace conductor was verified during the current runtime audit."
     }
   ],
   "archive": {

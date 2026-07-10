@@ -31,5 +31,5 @@ patterns, the noindex gate, the working-name notice, machine-local path leaks, l
 
     npx wrangler pages deploy dist --project-name=blacklabeltec
 
-Custom domains `blacklabeltec.com` and `www.blacklabeltec.com` attach to the Pages project
-(Cloudflare manages the DNS records for attached domains automatically).
+The working custom host is `www.blacklabeltec.com`. The apex `blacklabeltec.com` is not attached
+to the Pages project and must not be advertised until its DNS and HTTPS route are verified.
