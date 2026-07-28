@@ -34,7 +34,10 @@ if (data.meta.noindex) {
 
 // 4. Working-name notice must be visible.
 ok(rendered.includes("working name"), "working-name notice missing from rendered page");
-ok(rendered.includes("blacklabelbots.com"), "pointer to current verified public surface missing");
+// Standalone-domain match (CodeQL js/incomplete-url-substring-sanitization):
+// a bare substring test would also accept look-alike hosts such as
+// "evilblacklabelbots.com" or "blacklabelbots.com.evil.net".
+ok(/(^|[^.\w@-])(www\.)?blacklabelbots\.com(?!\.?[\w-])/.test(rendered), "pointer to current verified public surface missing");
 
 // 5. Ship-clean: no machine-local paths or undeclared local services in data or output.
 for (const re of [/\/Users\//, /localhost/, /127\.0\.0\.1/, /:5433/, /~\/(?!\w)/]) {
