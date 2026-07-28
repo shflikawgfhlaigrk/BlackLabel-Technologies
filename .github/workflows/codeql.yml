@@ -19,6 +19,8 @@ jobs:
     timeout-minutes: 30
     permissions:
       security-events: write
+      packages: read
+      actions: read
       contents: read
     strategy:
       fail-fast: false
