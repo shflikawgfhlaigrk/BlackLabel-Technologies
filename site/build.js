@@ -114,4 +114,44 @@ fs.writeFileSync(
   path.join(DIST, "robots.txt"),
   data.meta.noindex ? "User-agent: *\nDisallow: /\n" : "User-agent: *\nAllow: /\n"
 );
-console.log(`built dist/index.html (${html.length} bytes), noindex=${data.meta.noindex}`);
+
+// --- Security surface (RFC 9116 + Cloudflare Pages security headers) ---
+// Working host for this Pages project; apex stays unadvertised until DNS/HTTPS verified.
+const CANON_HOST = "https://www.blacklabeltec.com";
+// Contact is sourced from versioned data (a real, monitored inbox) — never invented.
+const securityContact = data.contact.email;
+// Expires ~1 year out, regenerated each build so the file never goes stale (RFC 9116 requires it).
+const expires = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString();
+
+fs.mkdirSync(path.join(DIST, ".well-known"), { recursive: true });
+fs.writeFileSync(
+  path.join(DIST, ".well-known", "security.txt"),
+  [
+    `Contact: mailto:${securityContact}`,
+    `Expires: ${expires}`,
+    "Preferred-Languages: en",
+    `Canonical: ${CANON_HOST}/.well-known/security.txt`,
+    "",
+  ].join("\n")
+);
+
+// Cloudflare Pages honors a top-level _headers file in the output dir.
+// CSP fits this page exactly: self-hosted, one inline <style>, no scripts, no external assets.
+fs.writeFileSync(
+  path.join(DIST, "_headers"),
+  `/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+`
+);
+
+console.log(
+  `built dist/index.html (${html.length} bytes), noindex=${data.meta.noindex}; ` +
+    `+security.txt (expires ${expires.slice(0, 10)}), +_headers`
+);
